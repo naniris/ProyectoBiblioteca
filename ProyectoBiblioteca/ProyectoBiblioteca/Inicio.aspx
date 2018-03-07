@@ -19,33 +19,58 @@
 <body ">
 
     <style>
-        body{
-            background-image: url(http://localhost:60360/App_Themes/Tema1/img/B65.jpg);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
+            body{
+                background-image: url(http://localhost:60360/App_Themes/Tema1/img/B65.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
 
-        }
-        h1 {
-            color: yellow;
-            font-family: Arial;
-            font-weight: bold;
-            background-color:sandybrown;
-            width:400px;
-            margin-left:35%;
-        }
+            }
+            h1 {
+                color: yellow;
+                font-family: Arial;
+                font-weight: bold;
+                background-color:sandybrown;
+                width:400px;
+                margin-left:35%;
+            }
 
-      p{
-         color:red;
-         font-size:x-large;
-      }
+          p{
+             color:red;
+             font-size:x-large;
+          }
 
-     .carousel-inner img {
-        width: 50%;
-        height: 50%;
-     }
-        
+         .carousel-inner img {
+            width: 50%;
+            height: 50%;
+         }
+     
+         #parrafo{
+             color:azure;
+             text-justify:auto;
+         }
+
+         h3{
+            color:darkcyan;
+            text-align:center;
+            font-size:50px;
+            
+         }
+
+         h4{
+             color:darkcyan;
+             font-size:30px; 
+         }
+
+         #hr{
+             color:aqua;
+            
+         }
+
+         #div{
+             margin-left:25%;
+         }
 
     </style>
     
@@ -162,6 +187,17 @@
             <span class="carousel-control-next-icon"></span>
           </a>
         </div>
+            <br />
+         <div class="col-md-6" id="div">
+           
+            <h3>Quiénes somos <i class="hidden-xs-down" aria-hidden="true"></i></h3>
+               <hr id="hr"/>
+            <p id="parrafo">TecBook es una plataforma con un estilo sensillo y eficaz para la descarga de libros en PDF online, lo que permite a cualquier usuario poder descargar los libros sin coste alguno. Desde libros de Musica, Programacion, Historia, Marketing, etc.</p>
+             <h4>Con TecBook</h4>
+            <p id="parrafo">Tu tienes el control de descargar cualquier libro, ya que cuenta con los mejores libros, ADEMAS de descargarlos de manera gratuita</p>
+            <p id="parrafo"><mark><em>Que esperas a descargar el libro y leerlo desde cualquier dispositivo!</em></mark></p>
+         </div>
+       
           
  </div>
 
