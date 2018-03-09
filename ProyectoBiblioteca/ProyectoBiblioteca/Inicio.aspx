@@ -69,7 +69,7 @@
          }
 
          #div{
-             margin-left:25%;
+            margin-right:20%;
          }
 
     </style>
