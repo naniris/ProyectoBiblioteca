@@ -25,7 +25,7 @@
                 background-position: center;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
-                background-size: cover;
+                background-size: cover ;
 
 
             }
