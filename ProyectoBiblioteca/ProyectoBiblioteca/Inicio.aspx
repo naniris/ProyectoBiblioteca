@@ -136,7 +136,17 @@
                       </span>
                   </a>
               </li>
+
+           
             
+            </ul>
+
+             <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a href="login.aspx">Inicio</a>
+                    /
+                    <a href="registro.apsx">Registrar</a>
+                </li>
             </ul>
                  
             </nav>
