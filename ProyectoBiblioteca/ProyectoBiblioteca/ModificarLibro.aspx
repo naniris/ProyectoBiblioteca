@@ -171,6 +171,8 @@
               <br />
               <div class="row">
                   <div class="col-sm-6 col-md offset-4"> 
+                    <asp:Label runat="server" CssClass="etiqueta">ISBN</asp:Label>
+                    <asp:TextBox runat="server" class="form-control" ID="isbn"></asp:TextBox>    
                     <asp:Label runat="server" CssClass="etiqueta">Titulo:</asp:Label>
                     <asp:TextBox runat="server" class="form-control" ID="titulo"></asp:TextBox>
                     <asp:Label runat="server" CssClass="etiqueta">Editorial </asp:Label>
@@ -194,6 +196,8 @@
                     <br />
                     <br />
                     <br />
+
+                    
                   </div>
              </div>      
           </div>

@@ -14,7 +14,7 @@ public partial class ModificarLibro : System.Web.UI.Page
     public static String cadenaConexion = "server=localhost;Database=biblioteca;Uid=root;Pwd=sistemas2018";
     static MySqlConnection conectando = new MySqlConnection(cadenaConexion);
 
-    private String isbn;
+    
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -47,7 +47,7 @@ public partial class ModificarLibro : System.Web.UI.Page
         cmd.Parameters.Add("@nombreAutor", MySqlDbType.Text).Value = nombre.Text;
         cmd.Parameters.Add("@ApAutor", MySqlDbType.Text).Value = apellido.Text;
         cmd.Parameters.Add("@imagen", MySqlDbType.LongBlob).Value = imagenoriginal;
-        cmd.Parameters.Add("isbn", this.isbn);
+        cmd.Parameters.Add("isbn", MySqlDbType.Text).Value = isbn.Text;
 
         cmd.CommandType = CommandType.Text;
         cmd.Connection = conectando;
