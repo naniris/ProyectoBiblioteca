@@ -9,13 +9,12 @@ using MySql.Data.MySqlClient;
 using MySql.Web;
 using System.Data;
 
-public partial class RegistroLibros : System.Web.UI.Page
+public partial class ModificarLibro : System.Web.UI.Page
 {
-
     public static String cadenaConexion = "server=localhost;Database=biblioteca;Uid=root;Pwd=sistemas2018";
-
     static MySqlConnection conectando = new MySqlConnection(cadenaConexion);
 
+    private String isbn;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -40,26 +39,21 @@ public partial class RegistroLibros : System.Web.UI.Page
         ImageConverter convertidor = new ImageConverter();
         bImage = (byte[])convertidor.ConvertTo(imtThumbnail, typeof(byte[]));
 
-
-
         MySqlConnection conectando = new MySqlConnection(cadenaConexion);
 
-        MySqlCommand cmd = new MySqlCommand("insert into libros values(0, @titulo, @editorial, @nombreAutor, @ApAutor, @imagen)", conectando);
+        MySqlCommand cmd = new MySqlCommand("update libros set titulo = @titulo, editorial = @editorial, nombreAutor = @nombreAutor, ApAutor = @ApAutor, imagen = @imagen where isbn = @isbn", conectando);
         cmd.Parameters.Add("@titulo", MySqlDbType.Text).Value = titulo.Text;
         cmd.Parameters.Add("@editorial", MySqlDbType.Text).Value = editorial.Text;
         cmd.Parameters.Add("@nombreAutor", MySqlDbType.Text).Value = nombre.Text;
         cmd.Parameters.Add("@ApAutor", MySqlDbType.Text).Value = apellido.Text;
         cmd.Parameters.Add("@imagen", MySqlDbType.LongBlob).Value = imagenoriginal;
+        cmd.Parameters.Add("isbn", this.isbn);
 
         cmd.CommandType = CommandType.Text;
         cmd.Connection = conectando;
         conectando.Open();
 
         cmd.ExecuteNonQuery();
-
-        string imagenDataUrl64 = "data:image/jpg;base64 " + Convert.ToBase64String(imagenoriginal);
-        imagenPreview.ImageUrl = imagenDataUrl64;
-
         consultarImagenes();
     }
 

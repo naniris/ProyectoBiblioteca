@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RegistroLibros.aspx.cs" Inherits="RegistroLibros" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ModificarLibro.aspx.cs" Inherits="ModificarLibro" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +6,6 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-     
     <link href="App_Themes/Tema1/css/bootstrap.min.css" rel="stylesheet" />
     <script src="App_Themes/Tema1/js/bootstrap.js"></script>
     <script src="App_Themes/Tema1/js/jquery.min.js"></script>
@@ -15,10 +14,11 @@
 
     <script src="https://use.fontawesome.com/025d1f53df.js"></script>
 
-    <title></title>
+    <title>Modificar Libro</title>
 </head>
 <body>
 
+    
      <style>
             body{
                 background-image: url(http://localhost:60360/App_Themes/Tema1/img/B65.jpg);
@@ -91,8 +91,8 @@
                  margin-left:5%;
              }
 
-
     </style>
+
 
     <form id="form1" runat="server">
         <div class="container-fluid">
@@ -166,7 +166,7 @@
              <br />
              <br />
 
-            <h2>Regístre libros!</h2>
+            <h2>Modifique los libros!</h2>
             <div class="container" id="Registro">
               <br />
               <div class="row">
@@ -190,7 +190,7 @@
                     <asp:FileUpload runat="server" id="ImagenSubir" />
                     <br />
                     <br />
-                    <asp:Button runat="server" Text="Subir" clasS="btn btn-primary" CssClass="btn btn-success" ID="btn_subir" OnClick="btn_subir_Click" />      
+                    <asp:Button runat="server" Text="Subir" clasS="btn btn-primary" CssClass="btn btn-success" ID="btn_subir" OnClick="btn_subir_Click"  />      
                     <br />
                     <br />
                     <br />
@@ -215,7 +215,6 @@
           </div>
             <br />
             <br />
-
         </div>
     </form>
 </body>

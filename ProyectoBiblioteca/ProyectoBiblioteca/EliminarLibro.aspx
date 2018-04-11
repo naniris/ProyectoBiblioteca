@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RegistroLibros.aspx.cs" Inherits="RegistroLibros" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="EliminarLibro.aspx.cs" Inherits="EliminarLibro" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +6,6 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-     
     <link href="App_Themes/Tema1/css/bootstrap.min.css" rel="stylesheet" />
     <script src="App_Themes/Tema1/js/bootstrap.js"></script>
     <script src="App_Themes/Tema1/js/jquery.min.js"></script>
@@ -15,18 +14,17 @@
 
     <script src="https://use.fontawesome.com/025d1f53df.js"></script>
 
-    <title></title>
+    <title>Eliminar Libro</title>
 </head>
-<body>
-
+<body>    
      <style>
+
             body{
                 background-image: url(http://localhost:60360/App_Themes/Tema1/img/B65.jpg);
                 background-position: center;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: cover;
-
 
             }
 
@@ -90,12 +88,11 @@
              #mover{
                  margin-left:5%;
              }
+          </style>
 
-
-    </style>
-
-    <form id="form1" runat="server">
-        <div class="container-fluid">
+       <form id="form1" runat="server">
+        <div>
+          <div class="container-fluid">
 
              <h1 class="text-center">Biblioteca Digital</h1>
               <nav class="navbar navbar-toggleable bg-faded">
@@ -166,31 +163,18 @@
              <br />
              <br />
 
-            <h2>Regístre libros!</h2>
+            <h2>Elimine libros!</h2>
             <div class="container" id="Registro">
               <br />
               <div class="row">
                   <div class="col-sm-6 col-md offset-4"> 
                     <asp:Label runat="server" CssClass="etiqueta">Titulo:</asp:Label>
+                    <br />
+                    <br />
                     <asp:TextBox runat="server" class="form-control" ID="titulo"></asp:TextBox>
-                    <asp:Label runat="server" CssClass="etiqueta">Editorial </asp:Label>
-                    <asp:TextBox runat="server" class="form-control" ID="editorial"></asp:TextBox>
-                    <asp:Label runat="server" CssClass="etiqueta">Nombre del autor </asp:Label>
-                    <asp:TextBox runat="server" class="form-control" ID="nombre"></asp:TextBox>
-                    <asp:Label runat="server" CssClass="etiqueta">Apellido del autor </asp:Label>
-                    <asp:TextBox runat="server" class="form-control" ID="apellido"></asp:TextBox>
-                    <asp:Label runat="server" CssClass="etiqueta">Imagen</asp:Label> />
-                    <br /> 
-                    <asp:Image CssClass="etiqueta" ImageUrl="App_Themes/Tema1/img/Play_Books_30007.png"  ID="imagenPreview" runat="server"/>
                     <br />
                     <br />
-                    <asp:Label runat="server" CssClass="etiqueta">Archivo</asp:Label>
-                    <br />
-                    <br />
-                    <asp:FileUpload runat="server" id="ImagenSubir" />
-                    <br />
-                    <br />
-                    <asp:Button runat="server" Text="Subir" clasS="btn btn-primary" CssClass="btn btn-success" ID="btn_subir" OnClick="btn_subir_Click" />      
+                    <asp:Button runat="server" Text="Eliminar" clasS="btn btn-primary" CssClass="btn btn-success" ID="btn_subir" OnClick="btn_subir_Click" />      
                     <br />
                     <br />
                     <br />
@@ -217,6 +201,7 @@
             <br />
 
         </div>
+       </div>
     </form>
 </body>
 </html>
