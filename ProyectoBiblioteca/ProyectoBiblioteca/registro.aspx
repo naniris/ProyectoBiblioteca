@@ -37,8 +37,16 @@
             font-family: Arial;
             font-weight: bold;
             width:200px;
-            margin-left:30%;
+            margin-left:23%;
          }
+
+         #Registro{
+                 margin-left:35%;
+         }
+
+         .etiqueta{
+                 color:#0DD5B1  ;
+          }
     </style>
 </head>
 <body>
@@ -118,30 +126,25 @@
                 <div class="col-lg-3">
 
                 </div>
-                <div class="col-lg-6">
-                    <h4>Crear cuenta</h4>
-                    	<form id="register-form" action="#" method="post" role="form" style="display: none;">
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Usuario" >
-									</div>
-									<div class="form-group">
-										<input type="email" class="form-control" placeholder="Correo electronico" >
-									</div>
-									<div class="form-group">
-										<input type="password"  class="form-control" placeholder="Contraseña">
-									</div>
-									<div class="form-group">
-										<input type="password"  class="form-control" placeholder="Confirmar contraseña">
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 ">
-												<button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-target="#mostrar" value="Crear cuenta">Crear cuenta</button>
-											</div>
-										</div>
-									</div>
-								</form>
-                </div>
+                
+       
+        <h4>Crear cuenta</h4>   
+        <div class="container" id="Registro">      
+                <div class="col-sm-6">
+                    <asp:Label runat="server" CssClass="etiqueta">Usuario:</asp:Label>
+                    <asp:TextBox runat="server" class="form-control" ID="usuario"></asp:TextBox>
+                    <asp:Label runat="server" CssClass="etiqueta">Correo electronico: </asp:Label>
+                    <asp:TextBox runat="server" class="form-control" ID="cElectronico"></asp:TextBox>
+                    <asp:Label runat="server" CssClass="etiqueta">Contraseña: </asp:Label>
+                    <asp:TextBox runat="server" class="form-control" ID="contra"></asp:TextBox>
+                    <asp:Label runat="server" CssClass="etiqueta">Confirmar contraseña: </asp:Label>
+                    <asp:TextBox runat="server" class="form-control" ID="contraConfirm"></asp:TextBox>
+                    <br />
+                    <asp:Button Text="Registrarme" runat="server" href="#" class="btn btn-primary" CssClass="btn btn-success"></asp:Button>
+                    
+            </div>
+          </div>
+
                 <div class="col-lg-3">
 
                 </div>
