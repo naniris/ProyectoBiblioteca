@@ -212,6 +212,7 @@
                           <asp:Label  runat="server" CssClass="etiqueta"><%# DataBinder.Eval(Container.DataItem, "titulo") %></asp:Label> 
                           <br />
                           <br />
+                          <asp:Label  runat="server" CssClass="etiqueta"><%# DataBinder.Eval(Container.DataItem, "isbn") %></asp:Label> 
                       </div>
 
                   </ItemTemplate> 

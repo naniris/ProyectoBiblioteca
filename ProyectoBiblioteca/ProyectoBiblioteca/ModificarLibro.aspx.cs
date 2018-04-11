@@ -73,7 +73,7 @@ public partial class ModificarLibro : System.Web.UI.Page
 
         MySqlConnection conectando = new MySqlConnection(cadenaConexion);
 
-        MySqlCommand cmd = new MySqlCommand("Select imagen, titulo from libros ORDER BY isbn ASC", conectando);
+        MySqlCommand cmd = new MySqlCommand("Select isbn, imagen, titulo from libros ORDER BY isbn ASC", conectando);
         cmd.CommandType = CommandType.Text;
         cmd.Connection = conectando;
         conectando.Open();
