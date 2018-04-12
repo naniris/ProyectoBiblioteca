@@ -14,10 +14,11 @@ public partial class ModificarLibro : System.Web.UI.Page
     public static String cadenaConexion = "server=localhost;Database=biblioteca;Uid=root;Pwd=sistemas2018";
     static MySqlConnection conectando = new MySqlConnection(cadenaConexion);
 
-    
+
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        UserActivo.Text = Session["activo"].ToString();
         consultarImagenes();
     }
 
@@ -47,7 +48,7 @@ public partial class ModificarLibro : System.Web.UI.Page
         cmd.Parameters.Add("@nombreAutor", MySqlDbType.Text).Value = nombre.Text;
         cmd.Parameters.Add("@ApAutor", MySqlDbType.Text).Value = apellido.Text;
         cmd.Parameters.Add("@imagen", MySqlDbType.LongBlob).Value = imagenoriginal;
-        cmd.Parameters.Add("isbn", MySqlDbType.Text).Value = isbn.Text;
+
 
         cmd.CommandType = CommandType.Text;
         cmd.Connection = conectando;
@@ -73,6 +74,7 @@ public partial class ModificarLibro : System.Web.UI.Page
 
         MySqlConnection conectando = new MySqlConnection(cadenaConexion);
 
+
         MySqlCommand cmd = new MySqlCommand("Select isbn, imagen, titulo from libros ORDER BY isbn ASC", conectando);
         cmd.CommandType = CommandType.Text;
         cmd.Connection = conectando;
@@ -87,5 +89,19 @@ public partial class ModificarLibro : System.Web.UI.Page
         repetidor.DataBind();
         conectando.Close();
 
+    }
+    protected void Llenado (){
+
+        conectando.Open();
+
+        MySqlDataAdapter Llenadores = new MySqlDataAdapter("Select isbn, titulo from libros", conectando);
+        DataSet Nombres = new DataSet();
+        Llenadores.Fill(Nombres);
+        titulo.DataSource = Nombres.Tables[0];
+        titulo.DataValueField = "isbn";
+        titulo.DataTextField = "titulo";
+        titulo.DataBind();
+        conectando.Close();
+        
     }
 }

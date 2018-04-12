@@ -27,6 +27,7 @@ public partial class EliminarLibro : System.Web.UI.Page
 
         MySqlCommand cmd = new MySqlCommand("delete from libros where titulo=@titulo", conectando);
         cmd.Parameters.Add("@titulo", MySqlDbType.Text).Value = titulo.Text;
+        Response.Write("<script language='JavaScript'>alert('Se elimino correctamente el libró...!!!');</script>");
         cmd.CommandType = CommandType.Text;
         cmd.Connection = conectando;
         conectando.Open();

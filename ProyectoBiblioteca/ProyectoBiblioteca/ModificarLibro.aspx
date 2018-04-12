@@ -165,16 +165,16 @@
             </nav> 
              <br />
              <br />
-
+            <asp:Label runat="server" Text="Bienvenido:" CssClass="etiqueta"></asp:Label>
+            <asp:Label runat="server" ID="UserActivo" CssClass="etiqueta"></asp:Label>
             <h2>Modifique los libros!</h2>
             <div class="container" id="Registro">
               <br />
               <div class="row">
                   <div class="col-sm-6 col-md offset-4"> 
-                    <asp:Label runat="server" CssClass="etiqueta">ISBN</asp:Label>
-                    <asp:TextBox runat="server" class="form-control" ID="isbn"></asp:TextBox>    
+                      
                     <asp:Label runat="server" CssClass="etiqueta">Titulo:</asp:Label>
-                    <asp:TextBox runat="server" class="form-control" ID="titulo"></asp:TextBox>
+                    <asp:dropdownlist  runat="server" class="form-control" ID="titulo"></asp:dropdownlist>
                     <asp:Label runat="server" CssClass="etiqueta">Editorial </asp:Label>
                     <asp:TextBox runat="server" class="form-control" ID="editorial"></asp:TextBox>
                     <asp:Label runat="server" CssClass="etiqueta">Nombre del autor </asp:Label>
@@ -212,7 +212,7 @@
                           <asp:Label  runat="server" CssClass="etiqueta"><%# DataBinder.Eval(Container.DataItem, "titulo") %></asp:Label> 
                           <br />
                           <br />
-                          <asp:Label  runat="server" CssClass="etiqueta"><%# DataBinder.Eval(Container.DataItem, "isbn") %></asp:Label> 
+                          <asp:Label  runat="server" CssClass="etiqueta"><%# DataBinder.Eval(Container.DataItem, "isbn" ) %></asp:Label> 
                       </div>
 
                   </ItemTemplate> 

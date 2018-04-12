@@ -19,7 +19,9 @@ public partial class RegistroLibros : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        UserActivo.Text = Session["activo"].ToString();
         consultarImagenes();
+     
     }
 
     protected void btn_subir_Click(object sender, EventArgs e)
@@ -41,7 +43,6 @@ public partial class RegistroLibros : System.Web.UI.Page
         bImage = (byte[])convertidor.ConvertTo(imtThumbnail, typeof(byte[]));
 
 
-
         MySqlConnection conectando = new MySqlConnection(cadenaConexion);
 
         MySqlCommand cmd = new MySqlCommand("insert into libros values(0, @titulo, @editorial, @nombreAutor, @ApAutor, @imagen)", conectando);
@@ -50,7 +51,7 @@ public partial class RegistroLibros : System.Web.UI.Page
         cmd.Parameters.Add("@nombreAutor", MySqlDbType.Text).Value = nombre.Text;
         cmd.Parameters.Add("@ApAutor", MySqlDbType.Text).Value = apellido.Text;
         cmd.Parameters.Add("@imagen", MySqlDbType.LongBlob).Value = imagenoriginal;
-
+        Response.Write("<script language='JavaScript'>alert('Se registraron correctamente los datos del libró...!!!');</script>");
         cmd.CommandType = CommandType.Text;
         cmd.Connection = conectando;
         conectando.Open();
@@ -59,7 +60,7 @@ public partial class RegistroLibros : System.Web.UI.Page
 
         string imagenDataUrl64 = "data:image/jpg;base64 " + Convert.ToBase64String(imagenoriginal);
         imagenPreview.ImageUrl = imagenDataUrl64;
-
+        Response.Redirect("RegistroLibros.aspx");
         consultarImagenes();
     }
 

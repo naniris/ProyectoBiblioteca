@@ -71,16 +71,7 @@
          #div{
             margin-right:20%;
          }
-         .item {
-      display: block;
-      width: 100%;
-      height: 400px;
-       }
-         .item img {
-      height: 100%;
-      width: 50%;
-       }
-         
+
     </style>
     
     <form id="form1" runat="server">
@@ -154,7 +145,7 @@
                 <li class="nav-item">
                     <a href="login.aspx">Inicio</a>
                     /
-                    <a href="registro.apsx">Registrar</a>
+                    <a href="registro.aspx">Registrar</a>
                 </li>
             </ul>
                  
@@ -219,155 +210,6 @@
        
           
  </div>
-
-
-
-
-        <h1> Libros de terror</h1>
-        <div id="dem" class="carousel slide" data-ride="carousel" >
-          <ul class="carousel-indicators">
-            <li data-target="#dem" data-slide-to="0" class="active"></li>
-            <li data-target="#dem" data-slide-to="1"></li>
-            <li data-target="#dem" data-slide-to="2"></li>
-           
-          </ul>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="item">
-                  <img src="App_Themes/Tema1/img/Terror1.png" class="rounded mx-auto d-block"  />
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="item">
-                 <img src="App_Themes/Tema1/img/Terror2.jpg"  class="rounded mx-auto d-block" />
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="item">
-                 <img src="App_Themes/Tema1/img/Terror3.jpg" class="rounded mx-auto d-block" />
-                </div>
-            </div>
-            
-         
-          <a class="carousel-control-prev" href="#dem" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </a>
-          <a class="carousel-control-next" href="#dem" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </a>
-        </div>
-         </div>
-
-        <br />
-        <br />
-
-        <h1>Libros de Accion</h1>
-        <div id="Ac" class="carousel slide" data-ride="carousel" >
-          <ul class="carousel-indicators">
-            <li data-target="#Ac" data-slide-to="0" class="active"></li>
-            <li data-target="#Ac" data-slide-to="1"></li>
-            <li data-target="#Ac" data-slide-to="2"></li>
-           
-          </ul>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="item">
-                  <img src="App_Themes/Tema1/img/Accion1.jpg" class="rounded mx-auto d-block"  />
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="item">
-                 <img src="App_Themes/Tema1/img/Accion2.jpg"  class="rounded mx-auto d-block" />
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="item">
-                 <img src="App_Themes/Tema1/img/Accion3.jpg" class="rounded mx-auto d-block" />
-                </div>
-            </div>
-            
-         
-          <a class="carousel-control-prev" href="#Ac" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </a>
-          <a class="carousel-control-next" href="#Ac" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </a>
-        </div>
-         </div>
-        <br />
-        <br />
-        <h1>Mangas</h1>
-        <div id="Mg" class="carousel slide" data-ride="carousel" >
-          <ul class="carousel-indicators">
-            <li data-target="#Mg" data-slide-to="0" class="active"></li>
-            <li data-target="#Mg" data-slide-to="1"></li>
-            <li data-target="#Mg" data-slide-to="2"></li>
-           
-          </ul>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="item">
-                  <img src="App_Themes/Tema1/img/Manga1.png" class="rounded mx-auto d-block"  />
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="item">
-                 <img src="App_Themes/Tema1/img/Manga2.jpg"  class="rounded mx-auto d-block" />
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="item">
-                 <img src="App_Themes/Tema1/img/Manga3.png" class="rounded mx-auto d-block" />
-                </div>
-            </div>
-            
-         
-          <a class="carousel-control-prev" href="#Mg" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </a>
-          <a class="carousel-control-next" href="#Mg" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </a>
-        </div>
-         </div>
-        <br />
-        <br />
-
-        <h1>Romance</h1>
-        <div id="Rm" class="carousel slide" data-ride="carousel" >
-          <ul class="carousel-indicators">
-            <li data-target="#Rm" data-slide-to="0" class="active"></li>
-            <li data-target="#Rm" data-slide-to="1"></li>
-            <li data-target="#Rm" data-slide-to="2"></li>
-           
-          </ul>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="item">
-                  <img src="App_Themes/Tema1/img/Romance1.jpg" class="rounded mx-auto d-block"  />
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="item">
-                 <img src="App_Themes/Tema1/img/Romance2.jpg"  class="rounded mx-auto d-block" />
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="item">
-                 <img src="App_Themes/Tema1/img/Romance3.jpg" class="rounded mx-auto d-block" />
-                </div>
-            </div>
-            
-         
-          <a class="carousel-control-prev" href="#Rm" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </a>
-          <a class="carousel-control-next" href="#Rm" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </a>
-        </div>
-         </div>
 
 
         

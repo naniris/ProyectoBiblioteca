@@ -127,7 +127,7 @@
 
                                                          
                      <li class="nav-item">
-                    <a href="#" class="nav-link">Ayuda</a>
+                    <a href="ModificarLibro.aspx" class="nav-link">Modificar</a>
                     </li>
 
                 </ul>
@@ -167,6 +167,8 @@
              <br />
 
             <h2>Regístre libros!</h2>
+            <asp:Label runat="server" Text="Bienvenido:" CssClass="etiqueta"></asp:Label>
+            <asp:Label runat="server" ID="UserActivo" CssClass="etiqueta"></asp:Label>
             <div class="container" id="Registro">
               <br />
               <div class="row">

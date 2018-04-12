@@ -174,7 +174,7 @@
                     <asp:TextBox runat="server" class="form-control" ID="titulo"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:Button runat="server" Text="Eliminar" clasS="btn btn-primary" CssClass="btn btn-success" ID="btn_subir" OnClick="btn_subir_Click" />      
+                    <asp:Button run at="server" Text="Eliminar" clasS="btn btn-primary" CssClass="btn btn-success" ID="btn_subir" OnClick="btn_subir_Click" />      
                     <br />
                     <br />
                     <br />

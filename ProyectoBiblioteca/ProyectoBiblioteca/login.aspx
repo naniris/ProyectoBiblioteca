@@ -29,19 +29,42 @@
             color: yellow;
             font-family: Arial;
             font-weight: bold;
-            background-color:sandybrown;
-            width:400px;
-            margin-left:35%;
+            background-color: sandybrown;
+            width: 400px;
+            margin-left: 38%;
+            margin-top: 1%;
             
         }
 
          h4{
-             color:greenyellow;
+            color:#FFC300  ;
             font-family: Arial;
             font-weight: bold;
             width:200px;
-            margin-left:30%;
+            margin-left:40%;
          }
+
+
+        a.contraOlvi{
+             color: #2980B9;
+        }
+
+        a.contraOlvi:hover{
+            color: #5DADE2;
+        }
+
+        nav.espacioTop{
+            margin-top: 1%;
+        }
+
+        #Registro{
+                 margin-left:35%;
+         }
+
+         .etiqueta{
+                 color:#0DD5B1  ;
+          }
+
     </style>
 </head>
 <body>
@@ -49,7 +72,7 @@
       
          <div class="container-fluid">    
        <h1 class="text-center">Biblioteca Digital</h1>
-              <nav class="navbar navbar-toggleable bg-faded">
+              <nav class="navbar navbar-toggleable bg-faded espacioTop">
                 <img src="App_Themes/Tema1/img/books.png" />
                           
                <ul class="navbar-nav ">
@@ -106,7 +129,9 @@
               </li>
             
             </ul>
-                 
+
+            
+                  
             </nav>
 
             
@@ -122,18 +147,20 @@
             </div>
             <div class="col-lg-6">
                 <h4>Iniciar sesión</h4>
-                    	<form id="login-form" action="#" method="post" role="form" style="display: block;">
+                    	<form id="login" action="#" method="post" role="form" style="display: block;">
 									<div class="form-group">
-										<input type="text"  class="form-control" placeholder="Usuario" value="">
+                                        <asp:Label runat="server" CssClass="etiqueta">Usuario</asp:Label>
+                                        <asp:TextBox runat="server" CssClass="form-control" ID="usuario"></asp:TextBox>/>
 									</div>
 									<div class="form-group">
-										<input type="password"  class="form-control" placeholder="Contraseña">
+                                       <asp:Label runat="server" CssClass="etiqueta">Contraseña</asp:Label> />
+                                       <asp:TextBox runat="server" CssClass="form-control" ID="contrasena"></asp:TextBox>/>
 									</div>
 									
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-												<button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-target="#mostrar" value="Iniciar secion">Iniciar Sesión</button>
+												<asp:Button Text="Iniciar Sesión" runat="server" href="#" class="btn btn-primary" CssClass="btn btn-success" OnClick="Unnamed3_Click"></asp:Button>
 											</div>
 										</div>
 									</div>
@@ -141,7 +168,7 @@
 										<div class="row">
 											<div class="col-lg-12">
 												<div class="text-center">
-													<a href="#" tabindex="5" class="forgot-password">¿Has olvidado tu contraseña?</a>
+													<a href="#" tabindex="5" class="contraOlvi">¿Has olvidado tu contraseña?</a>
 												</div>
 											</div>
 										</div>

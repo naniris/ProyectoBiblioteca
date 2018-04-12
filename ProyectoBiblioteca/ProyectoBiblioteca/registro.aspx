@@ -140,7 +140,7 @@
                     <asp:Label runat="server" CssClass="etiqueta">Confirmar contraseña: </asp:Label>
                     <asp:TextBox runat="server" class="form-control" ID="contraConfirm"></asp:TextBox>
                     <br />
-                    <asp:Button Text="Registrarme" runat="server" href="#" class="btn btn-primary" CssClass="btn btn-success"></asp:Button>
+                    <asp:Button Text="Registrarme" runat="server" class="btn btn-primary" CssClass="btn btn-success" OnClick="Unnamed5_Click"></asp:Button>
                     
             </div>
           </div>
