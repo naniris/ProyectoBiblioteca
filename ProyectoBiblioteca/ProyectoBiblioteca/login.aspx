@@ -72,68 +72,61 @@
       
          <div class="container-fluid">    
        <h1 class="text-center">Biblioteca Digital</h1>
-              <nav class="navbar navbar-toggleable bg-faded espacioTop">
+              <nav class="navbar navbar-toggleable bg-faded">
                 <img src="App_Themes/Tema1/img/books.png" />
                           
-               <ul class="navbar-nav ">
+               <ul class="navbar-nav" style="margin-right:2%">
                   
 
                    <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarsdrop" data-toggle="dropdown">Clasificacion</a>
                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Historia</a>
-                            <a href="#" class="dropdown-item">Ciencias</a>
-                            <a href="#" class="dropdown-item">Geografia</a>
-                            <a href="#" class="dropdown-item">Programacion</a>
-                            <a href="#" class="dropdown-item">Marketing</a>
-                            <a href="#" class="dropdown-item">Arte</a>
-                            <a href="#" class="dropdown-item">Musica</a>
+                            <a href="Historia.aspx" class="dropdown-item">Historia</a>
+                            <a href="Comics.aspx" class="dropdown-item">Comics</a>
+                            <a href="Programacion.aspx" class="dropdown-item">Programación</a>
+                            <a href="Marketing.aspx" class="dropdown-item">Marketing</a>
                         </div>
                     </li>
-
-                   
-                    <li class="nav-item">
-                    <a href="#" class="nav-link">Contacto</a>
-                    </li>
-
-                                                         
+                                      
                      <li class="nav-item">
                     <a href="#" class="nav-link">Ayuda</a>
                     </li>
 
+                 
                 </ul>
-                <div class="form-inline my-2 my-lg-0" style="margin-left:35%;">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Buscar"/>
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                
+                <div class="form-inline my-2 my-lg-0" style="margin-right:20%">
+
+                  <asp:Label runat="server"><input class="form-control mr-sm-2" type="text" placeholder="Buscar"/></asp:Label>
+                  <asp:Button runat="server" Text="Buscar" class="btn btn-outline-success my-2 my-sm-0"/>
 
                 </div >
 
                 
-
-                <ul class="social-header list-inline-item text-sm-right">
-               <li class="list-inline-item">
-                <a href="#">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-whatsapp fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-            
+            <ul class="social-header list-inline-item text-sm-right" style="margin-left:17%">
+                   <li class="list-inline-item">
+                       <br />
+               
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                          </span>
+                         <asp:Label Text="TecBook" runat="server" />
+               
+                  </li>
+                  <li class="list-inline-item">
+              
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-whatsapp fa-stack-1x fa-inverse"></i>
+                          </span>
+                        <asp:Label Text="7531555811" runat="server" />
+              
+                  </li>
             </ul>
 
-            
-                  
+                 
             </nav>
-
             
             <nav class="navbar navbar-toggleable bg-warning">
 

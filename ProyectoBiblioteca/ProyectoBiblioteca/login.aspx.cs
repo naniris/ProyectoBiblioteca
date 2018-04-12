@@ -22,6 +22,14 @@ public partial class login : System.Web.UI.Page
 
             Session["activo"] = usuario.Text;
             Response.Redirect("RegistroLibros.aspx");
+            
+        }
+        else
+        { 
+
+            Response.Write("<script>window.alert('Usuario o contraseña invalidos!');</script>");
+            usuario.Text = "";
+            contrasena.Text = "";
         }
     }
 }

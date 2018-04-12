@@ -78,11 +78,13 @@
              }
 
              .etiqueta{
-                 color:#0DD5B1  ;
+
+                 font-size:large;
+                 color:#0DD5B1;
              }
          
              #Registro{
-                 margin-left:10%;
+                 margin-left:2%;
              }
 
              #mover{
@@ -98,37 +100,34 @@
               <nav class="navbar navbar-toggleable bg-faded">
                 <img src="App_Themes/Tema1/img/books.png" />
                           
-               <ul class="navbar-nav ">
+               <ul class="navbar-nav" style="margin-right:2%">
                   
 
                    <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarsdrop" data-toggle="dropdown">Clasificacion</a>
                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Historia</a>
-                            <a href="#" class="dropdown-item">Ciencias</a>
-                            <a href="#" class="dropdown-item">Geografia</a>
-                            <a href="#" class="dropdown-item">Programacion</a>
-                            <a href="#" class="dropdown-item">Marketing</a>
-                            <a href="#" class="dropdown-item">Arte</a>
-                            <a href="#" class="dropdown-item">Musica</a>
-                            
-                        
+                            <a href="Historia.aspx" class="dropdown-item">Historia</a>
+                            <a href="Comics.aspx" class="dropdown-item">Comics</a>
+                            <a href="Programacion.aspx" class="dropdown-item">Programación</a>
+                            <a href="Marketing.aspx" class="dropdown-item">Marketing</a>
                             
                         </div>
                     </li>
 
                    
                     <li class="nav-item">
-                    <a href="#" class="nav-link">Contacto</a>
+                    <a href="RegistroLibros.aspx" class="nav-link">Registrar</a>
                     </li>
 
                                                          
                      <li class="nav-item">
-                    <a href="#" class="nav-link">Ayuda</a>
+                    <a href="ModificarLibro.aspx" class="nav-link">Modificar</a>
                     </li>
 
+                 
                 </ul>
-                <div class="form-inline my-2 my-lg-0" style="margin-left:35%;">
+                
+                <div class="form-inline my-2 my-lg-0" style="margin-right:20%">
                   <input class="form-control mr-sm-2" type="text" placeholder="Buscar"/>
                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
 
@@ -136,25 +135,29 @@
 
                 
 
-                <ul class="social-header list-inline-item text-sm-right">
-               <li class="list-inline-item">
-                <a href="#">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-whatsapp fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-            
+             <ul class="social-header list-inline-item text-sm-right" style="margin-left:10%">
+                   <li class="list-inline-item">
+                       <br />
+               
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                          </span>
+                         <asp:Label Text="TecBook" runat="server" />
+               
+                  </li>
+                  <li class="list-inline-item">
+              
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-whatsapp fa-stack-1x fa-inverse"></i>
+                          </span>
+                        <asp:Label Text="7531555811" runat="server" />
+              
+                  </li>
             </ul>
+
+                 
             </nav>
             
             <nav class="navbar navbar-toggleable bg-warning">
@@ -163,18 +166,19 @@
              <br />
              <br />
 
+            <asp:Label runat="server" Text="Bienvenido:" CssClass="etiqueta"></asp:Label>
+            <asp:Label runat="server" ID="UserActivo" CssClass="etiqueta"></asp:Label>
+            <asp:LinkButton Text="Salir" runat="server" ID="Salir" OnClick="Salir_Click"></asp:LinkButton>
             <h2>Elimine libros!</h2>
             <div class="container" id="Registro">
               <br />
               <div class="row">
                   <div class="col-sm-6 col-md offset-4"> 
-                    <asp:Label runat="server" CssClass="etiqueta">Titulo:</asp:Label>
+                    <asp:Label runat="server" CssClass="etiqueta">ISBN:</asp:Label>
                     <br />
+                    <asp:TextBox runat="server" class="form-control" ID="isbn"></asp:TextBox>
                     <br />
-                    <asp:TextBox runat="server" class="form-control" ID="titulo"></asp:TextBox>
-                    <br />
-                    <br />
-                    <asp:Button run at="server" Text="Eliminar" clasS="btn btn-primary" CssClass="btn btn-success" ID="btn_subir" OnClick="btn_subir_Click" />      
+                    <asp:Button runat="server" Text="Eliminar" clasS="btn btn-primary" CssClass="btn btn-success" ID="btn_subir" OnClick="btn_subir_Click" />      
                     <br />
                     <br />
                     <br />
@@ -186,10 +190,12 @@
               <asp:Repeater ID="repetidor" runat="server">
                   <ItemTemplate>
 
-                      <div class="col-md-3">
+                    <div class="col-md-3">
                           <img  class="img-responsive" src="data:image/jpg;base64, <%# Convert.ToBase64String((byte[])DataBinder.Eval(Container.DataItem, "imagen")) %>"/> 
                           <br />
-                          <asp:Label  runat="server" CssClass="etiqueta"><%# DataBinder.Eval(Container.DataItem, "titulo") %></asp:Label> 
+                          <asp:Label  runat="server" Text="Titulo: " CssClass="etiqueta"><%# DataBinder.Eval(Container.DataItem, "titulo") %></asp:Label> 
+                          <br />
+                          <asp:Label  runat="server" Text="ISBN: " CssClass="etiqueta"><%# DataBinder.Eval(Container.DataItem, "isbn" ) %></asp:Label> 
                           <br />
                           <br />
                       </div>

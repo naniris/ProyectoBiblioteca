@@ -16,7 +16,11 @@ public partial class login : System.Web.UI.Page
     {
         
         int registro = conexion.Usuario(usuario.Text,cElectronico.Text,contra.Text,contraConfirm.Text);
-        Response.Write("<script language='JavaScript'>alert('Se elimino correctamente el libró...!!!');</script>");
+        Response.Write("<script language='JavaScript'>alert('Se creo correctamente el usuario...!!!');</script>");
+        usuario.Text = "";
+        cElectronico.Text = "";
+        contra.Text = "";
+        contraConfirm.Text = "";
 
     }
 }

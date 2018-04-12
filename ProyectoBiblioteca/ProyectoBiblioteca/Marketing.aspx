@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RegistroLibros.aspx.cs" Inherits="RegistroLibros" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Marketing.aspx.cs" Inherits="Marketing" %>
 
 <!DOCTYPE html>
 
@@ -6,8 +6,8 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-     
-    <link href="App_Themes/Tema1/css/bootstrap.min.css" rel="stylesheet" />
+
+<link href="App_Themes/Tema1/css/bootstrap.min.css" rel="stylesheet" />
     <script src="App_Themes/Tema1/js/bootstrap.js"></script>
     <script src="App_Themes/Tema1/js/jquery.min.js"></script>
     <script src="App_Themes/Tema1/js/bootstrap.min.js"></script>
@@ -15,18 +15,17 @@
 
     <script src="https://use.fontawesome.com/025d1f53df.js"></script>
 
-    <title></title>
+    <title>Marketing</title>
 </head>
-<body>
-
+<body>    
      <style>
+
             body{
                 background-image: url(http://localhost:60360/App_Themes/Tema1/img/B65.jpg);
                 background-position: center;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: cover;
-
 
             }
 
@@ -92,15 +91,14 @@
              #mover{
                  margin-left:5%;
              }
+          </style>
 
-
-    </style>
-
-    <form id="form1" runat="server">
-        <div class="container-fluid">
+       <form id="form1" runat="server">
+        <div>
+          <div class="container-fluid">
 
              <h1 class="text-center">Biblioteca Digital</h1>
-             <nav class="navbar navbar-toggleable bg-faded">
+              <nav class="navbar navbar-toggleable bg-faded">
                 <img src="App_Themes/Tema1/img/books.png" />
                           
                <ul class="navbar-nav" style="margin-right:2%">
@@ -108,22 +106,27 @@
 
                    <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarsdrop" data-toggle="dropdown">Clasificacion</a>
-                        <div class="dropdown-menu">
+                       <div class="dropdown-menu">
                             <a href="Historia.aspx" class="dropdown-item">Historia</a>
                             <a href="Comics.aspx" class="dropdown-item">Comics</a>
                             <a href="Programacion.aspx" class="dropdown-item">Programación</a>
-                            <a href="Marketing.aspx" class="dropdown-item">Marketing</a>
+                            <a href="#" class="dropdown-item">Arte</a>
+                            <a href="#" class="dropdown-item">Musica</a>
+                            
+                        
+                            
                         </div>
                     </li>
 
-                                                         
+                   
                     <li class="nav-item">
-                        <a href="ModificarLibro.aspx" class="nav-link">Modificar</a>
+                    <a href="RegistroLibros.aspx" class="nav-link">Registrar</a>
                     </li>
 
-                   <li class="nav-item">
-                        <a href="EliminarLibro.aspx" class="nav-link">Eliminar</a>
-                   </li>
+                                                         
+                     <li class="nav-item">
+                    <a href="ModificarLibro.aspx" class="nav-link">Modificar</a>
+                    </li>
 
                  
                 </ul>
@@ -136,7 +139,7 @@
 
                 
 
-              <ul class="social-header list-inline-item text-sm-right" style="margin-left:10%">
+             <ul class="social-header list-inline-item text-sm-right" style="margin-left:10%">
                    <li class="list-inline-item">
                        <br />
                
@@ -158,50 +161,15 @@
                   </li>
             </ul>
 
-             
+                 
             </nav>
             
             <nav class="navbar navbar-toggleable bg-warning">
 
             </nav> 
              <br />
-             <br />
 
-            <asp:Label runat="server" Text="Bienvenido:" CssClass="etiqueta"></asp:Label>
-            <asp:Label runat="server" ID="UserActivo" CssClass="etiqueta"></asp:Label>
-            <asp:LinkButton Text="Salir" runat="server" ID="Salir" OnClick="Salir_Click"></asp:LinkButton>
-            <h2>Registre libros!</h2>
-            <div class="container" id="Registro">
-              <br />
-              <div class="row">
-                  <div class="col-sm-6 col-md offset-4"> 
-                    <asp:Label runat="server" CssClass="etiqueta">Titulo:</asp:Label>
-                    <asp:TextBox runat="server" class="form-control" ID="titulo"></asp:TextBox>
-                    <asp:Label runat="server" CssClass="etiqueta">Editorial </asp:Label>
-                    <asp:TextBox runat="server" class="form-control" ID="editorial"></asp:TextBox>
-                    <asp:Label runat="server" CssClass="etiqueta">Nombre del autor </asp:Label>
-                    <asp:TextBox runat="server" class="form-control" ID="nombre"></asp:TextBox>
-                    <asp:Label runat="server" CssClass="etiqueta">Apellido del autor </asp:Label>
-                    <asp:TextBox runat="server" class="form-control" ID="apellido"></asp:TextBox>
-                    <asp:Label runat="server" CssClass="etiqueta">Clasificación</asp:Label>
-                    <asp:TextBox runat="server" class="form-control" ID="clasificacion"></asp:TextBox>
-                    <asp:Label runat="server" CssClass="etiqueta">Imagen</asp:Label> />
-                    <br /> 
-                    <asp:Image CssClass="etiqueta" ImageUrl="App_Themes/Tema1/img/libros.jpg"  ID="imagenPreview" runat="server"/>
-                    <br />
-                    <asp:Label runat="server" CssClass="etiqueta">Archivo</asp:Label>
-                    <br />
-                    <br />
-                    <asp:FileUpload runat="server" id="ImagenSubir" />
-                    <br />
-                    <br />
-                    <asp:Button runat="server" Text="Subir" clasS="btn btn-primary" CssClass="btn btn-success" ID="btn_subir" OnClick="btn_subir_Click" />      
-                    <br />
-                    <br />
-                    <br />
-                  </div>
-             </div>      
-          </div>
+           <asp:LinkButton Text="Salir" runat="server" ID="Salir" OnClick="Salir_Click"></asp:LinkButton>
           
           <div class="row" id="mover">
               <asp:Repeater ID="repetidor" runat="server">
@@ -211,10 +179,8 @@
                           <img  class="img-responsive" src="data:image/jpg;base64, <%# Convert.ToBase64String((byte[])DataBinder.Eval(Container.DataItem, "imagen")) %>"/> 
                           <br />
                           <asp:Label  runat="server" Text="Titulo: " CssClass="etiqueta"><%# DataBinder.Eval(Container.DataItem, "titulo") %></asp:Label> 
-                          <br />  
-                          <asp:Label  runat="server" Text="ISBN: " CssClass="etiqueta"><%# DataBinder.Eval(Container.DataItem, "isbn") %></asp:Label> 
                           <br />
-                          <asp:Label  runat="server" Text="Registró: " CssClass="etiqueta"><%# DataBinder.Eval(Container.DataItem, "usuarioLibro") %></asp:Label> 
+                          <asp:Label  runat="server" Text="ISBN: " CssClass="etiqueta"><%# DataBinder.Eval(Container.DataItem, "isbn") %></asp:Label>
                           <br />
                           <br />
                       </div>
@@ -226,6 +192,8 @@
             <br />
 
         </div>
+       </div>
     </form>
 </body>
+
 </html>

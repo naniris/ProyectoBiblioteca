@@ -45,13 +45,15 @@ public partial class RegistroLibros : System.Web.UI.Page
 
         MySqlConnection conectando = new MySqlConnection(cadenaConexion);
 
-        MySqlCommand cmd = new MySqlCommand("insert into libros values(0, @titulo, @editorial, @nombreAutor, @ApAutor, @imagen)", conectando);
+        MySqlCommand cmd = new MySqlCommand("insert into libros values(0, @usuarioLibro, @titulo, @editorial, @nombreAutor, @ApAutor, @clasificacion, @imagen)", conectando);
+        cmd.Parameters.Add("@usuarioLibro", MySqlDbType.Text).Value = UserActivo.Text;
         cmd.Parameters.Add("@titulo", MySqlDbType.Text).Value = titulo.Text;
         cmd.Parameters.Add("@editorial", MySqlDbType.Text).Value = editorial.Text;
         cmd.Parameters.Add("@nombreAutor", MySqlDbType.Text).Value = nombre.Text;
         cmd.Parameters.Add("@ApAutor", MySqlDbType.Text).Value = apellido.Text;
+        cmd.Parameters.Add("@clasificacion", MySqlDbType.Text).Value = clasificacion.Text;
         cmd.Parameters.Add("@imagen", MySqlDbType.LongBlob).Value = imagenoriginal;
-        Response.Write("<script language='JavaScript'>alert('Se registraron correctamente los datos del libró...!!!');</script>");
+        Response.Write("<script language='JavaScript'>alert('Se registraron correctamente los datos...!!!');</script>");
         cmd.CommandType = CommandType.Text;
         cmd.Connection = conectando;
         conectando.Open();
@@ -80,7 +82,7 @@ public partial class RegistroLibros : System.Web.UI.Page
 
         MySqlConnection conectando = new MySqlConnection(cadenaConexion);
 
-        MySqlCommand cmd = new MySqlCommand("Select isbn, imagen, titulo from libros ORDER BY isbn ASC", conectando);
+        MySqlCommand cmd = new MySqlCommand("Select isbn, imagen, titulo, usuarioLibro from libros ORDER BY isbn ASC", conectando);
         cmd.CommandType = CommandType.Text;
         cmd.Connection = conectando;
         conectando.Open();
@@ -94,5 +96,11 @@ public partial class RegistroLibros : System.Web.UI.Page
         repetidor.DataBind();
         conectando.Close();
 
+    }
+
+    protected void Salir_Click(object sender, EventArgs e)
+    {
+        Session.Abandon();
+        Response.Redirect("inicio.aspx");
     }
 }

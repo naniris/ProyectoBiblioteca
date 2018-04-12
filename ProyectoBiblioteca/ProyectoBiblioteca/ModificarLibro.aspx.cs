@@ -42,14 +42,15 @@ public partial class ModificarLibro : System.Web.UI.Page
 
         MySqlConnection conectando = new MySqlConnection(cadenaConexion);
 
-        MySqlCommand cmd = new MySqlCommand("update libros set titulo = @titulo, editorial = @editorial, nombreAutor = @nombreAutor, ApAutor = @ApAutor, imagen = @imagen where isbn = @isbn", conectando);
+        MySqlCommand cmd = new MySqlCommand("update libros set usuarioLibro = @usuarioLibro, titulo = @titulo, editorial = @editorial, nombreAutor = @nombreAutor, ApAutor = @ApAutor, imagen = @imagen where isbn = @isbn", conectando);
+        cmd.Parameters.Add("@usuarioLibro", MySqlDbType.Text).Value = UserActivo.Text;
+        cmd.Parameters.Add("@isbn", MySqlDbType.Text).Value = isbn.Text;
         cmd.Parameters.Add("@titulo", MySqlDbType.Text).Value = titulo.Text;
         cmd.Parameters.Add("@editorial", MySqlDbType.Text).Value = editorial.Text;
         cmd.Parameters.Add("@nombreAutor", MySqlDbType.Text).Value = nombre.Text;
         cmd.Parameters.Add("@ApAutor", MySqlDbType.Text).Value = apellido.Text;
         cmd.Parameters.Add("@imagen", MySqlDbType.LongBlob).Value = imagenoriginal;
-
-
+        Response.Write("<script language='JavaScript'>alert('Se modifico correctamente los datos...!!!');</script>");
         cmd.CommandType = CommandType.Text;
         cmd.Connection = conectando;
         conectando.Open();
@@ -90,18 +91,42 @@ public partial class ModificarLibro : System.Web.UI.Page
         conectando.Close();
 
     }
-    protected void Llenado (){
 
+
+    protected void btn_buscar_Click(object sender, EventArgs e)
+    {
+
+        MySqlConnection conectando = new MySqlConnection(cadenaConexion);
         conectando.Open();
+        MySqlCommand cmd = new MySqlCommand("Select titulo, editorial, nombreAutor, Apautor from libros where isbn=@isbn" , conectando);
+        cmd.Parameters.Add("@isbn", MySqlDbType.Text).Value = isbn.Text;
+        cmd.CommandType = CommandType.Text;
+        cmd.Connection = conectando;
+        MySqlDataReader buscar = cmd.ExecuteReader();
+        if (buscar.Read())
+        {
+           
+                titulo.Text = "" + buscar["titulo"];
+                editorial.Text = "" + buscar["editorial"];
+                nombre.Text = "" + buscar["nombreAutor"];
+                apellido.Text = "" + buscar["Apautor"];
+           
+        }
+        else
+        {
+            Response.Write("<script>window.alert('No encontrado');</script>");
+            isbn.Text = "";
+            titulo.Text = "";
+            nombre.Text = "";
+            apellido.Text = "";
+        }
 
-        MySqlDataAdapter Llenadores = new MySqlDataAdapter("Select isbn, titulo from libros", conectando);
-        DataSet Nombres = new DataSet();
-        Llenadores.Fill(Nombres);
-        titulo.DataSource = Nombres.Tables[0];
-        titulo.DataValueField = "isbn";
-        titulo.DataTextField = "titulo";
-        titulo.DataBind();
-        conectando.Close();
         
+    }
+
+    protected void Salir_Click(object sender, EventArgs e)
+    {
+        Session.Abandon();
+        Response.Redirect("inicio.aspx");
     }
 }

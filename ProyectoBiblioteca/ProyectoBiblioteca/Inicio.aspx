@@ -69,9 +69,10 @@
          }
 
          #div{
-            margin-right:20%;
+            margin-left:25%;
          }
 
+        
     </style>
     
     <form id="form1" runat="server">
@@ -81,18 +82,16 @@
               <nav class="navbar navbar-toggleable bg-faded">
                 <img src="App_Themes/Tema1/img/books.png" />
                           
-               <ul class="navbar-nav ">
+               <ul class="navbar-nav" style="margin-right:2%">
                   
 
                    <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarsdrop" data-toggle="dropdown">Clasificacion</a>
                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Historia</a>
-                            <a href="#" class="dropdown-item">Ciencias</a>
-                            <a href="#" class="dropdown-item">Geografia</a>
-                            <a href="#" class="dropdown-item">Programacion</a>
-                            <a href="#" class="dropdown-item">Marketing</a>
-                            <a href="#" class="dropdown-item">Arte</a>
+                            <a href="Historia.aspx" class="dropdown-item">Historia</a>
+                            <a href="Comics.aspx" class="dropdown-item">Comics</a>
+                            <a href="Programacion.aspx" class="dropdown-item">Programación</a>
+                            <a href="Marketing.aspx" class="dropdown-item">Marketing</a>
                             <a href="#" class="dropdown-item">Musica</a>
                             
                         
@@ -100,18 +99,15 @@
                         </div>
                     </li>
 
-                   
-                    <li class="nav-item">
-                    <a href="#" class="nav-link">Contacto</a>
-                    </li>
-
                                                          
                      <li class="nav-item">
                     <a href="#" class="nav-link">Ayuda</a>
                     </li>
 
+                 
                 </ul>
-                <div class="form-inline my-2 my-lg-0" style="margin-left:35%;">
+                
+                <div class="form-inline my-2 my-lg-0" style="margin-right:20%">
                   <input class="form-control mr-sm-2" type="text" placeholder="Buscar"/>
                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
 
@@ -119,31 +115,31 @@
 
                 
 
-                <ul class="social-header list-inline-item text-sm-right">
-               <li class="list-inline-item">
-                <a href="#">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-whatsapp fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-
-           
-            
+              <ul class="social-header list-inline-item text-sm-right" style="margin-left:-3%">
+                   <li class="list-inline-item">
+                       <br />
+               
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                          </span>
+                         <asp:Label Text="TecBook" runat="server" />
+               
+                  </li>
+                  <li class="list-inline-item">
+              
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-whatsapp fa-stack-1x fa-inverse"></i>
+                          </span>
+                        <asp:Label Text="7531555811" runat="server" />
+              
+                  </li>
             </ul>
 
-             <ul class="navbar-nav ">
+             <ul class="navbar-nav " style="margin-left:5%">
                 <li class="nav-item">
-                    <a href="login.aspx">Inicio</a>
+                    <a href="login.aspx">Iniciar Sesión</a>
                     /
                     <a href="registro.aspx">Registrar</a>
                 </li>
@@ -201,11 +197,11 @@
          <div class="col-md-6" id="div">
            
             <h3>Quiénes somos <i class="hidden-xs-down" aria-hidden="true"></i></h3>
-               <hr id="hr"/>
+               
             <p id="parrafo">TecBook es una plataforma con un estilo sensillo y eficaz para la descarga de libros en PDF online, lo que permite a cualquier usuario poder descargar los libros sin coste alguno. Desde libros de Musica, Programacion, Historia, Marketing, etc.</p>
              <h4>Con TecBook</h4>
             <p id="parrafo">Tu tienes el control de descargar cualquier libro, ya que cuenta con los mejores libros, ADEMAS de descargarlos de manera gratuita</p>
-            <p id="parrafo"><mark><em>Que esperas a descargar el libro y leerlo desde cualquier dispositivo!</em></mark></p>
+            <p id="parrafo" style="margin-left:17%"><mark><em>Encuentra el libro que siempre buscabas!</em></mark></p>
          </div>
        
           
